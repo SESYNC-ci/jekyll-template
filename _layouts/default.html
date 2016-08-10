@@ -26,8 +26,9 @@
             <!--<div class="row" >-->
                 <div class="col-md-9" >
                    <div class="row">
-                        <div class="menu-links" ><ul class="list-inline">
-                                {% for p in site.pages | sort:"menu" %}
+                     <div class="menu-links" ><ul class="list-inline">
+			        {% assign pages = site.pages | sort:"menu" %}
+                                {% for p in pages %}
                                 {% if p.menu %}<li><a href="{{site.baseurl}}{{p.url}}">{% if p.menutitle %}{{ p.menutitle }}{% else %}{{ p.title }}{% endif %}</a></li> {% endif %}
                                 {% endfor %}
                         </ul></div>
